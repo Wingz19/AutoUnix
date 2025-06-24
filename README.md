@@ -17,3 +17,10 @@ apt install python3-venv
 python3 -m venv testenv
 source testenv/bin/activate
 
+Enable bash completion
+python -m autolinux.main bash-completion
+python -m autolinux.main bash-completion > autolinux-completion.sh
+source autolinux-completion.sh
+
+syntax 
+autolinux <do>

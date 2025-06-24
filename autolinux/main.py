@@ -5,7 +5,7 @@ from autolinux.patch import patch, test_patch, check_patch, revert_patch
 from autolinux.fix import fix, test_fix, check_fix, revert_fix
 from autolinux.troubleshoot import troubleshoot
 from autolinux.backup import config_backup
-from autolinux.bashcompletion import print_bash_completion
+from autolinux.bashcompletion import print_bash_completion, enable_bash_completion
 
 def main():
     parser = argparse.ArgumentParser(description="Autolinux Automation Tool")
@@ -27,6 +27,7 @@ def main():
     subparsers.add_parser("troubleshoot", help="Troubleshoot system")
     subparsers.add_parser("config-backup", help="Create and ship backup")
     subparsers.add_parser("bash-completion", help="Output bash completion script")
+    subparsers.add_parser("enable-bash-completion", help="Automatically enable bash completion")
 
     args = parser.parse_args()
 
@@ -68,6 +69,8 @@ def main():
         config_backup()
     elif args.command == "bash-completion":
         print_bash_completion()
+    elif args.command == "enable-bash-completion":
+        enable_bash_completion()
     else:
         parser.print_help()
 

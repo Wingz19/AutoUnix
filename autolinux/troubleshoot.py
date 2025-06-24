@@ -16,6 +16,24 @@ def troubleshoot():
             f.write(error_msg)
             print(error_msg.strip())
 
+        f.write("\n>>> Collecting ERROR/FAILURE logs (last 100 lines):\n")
+        print("Collecting error/failure logs...")
+        try:
+            error_logs = subprocess.check_output(
+                "grep -Ei 'error|fail|critical' /var/log/syslog | tail -n 100",
+                shell=True, text=True
+            )
+            if error_logs.strip():
+                f.write(error_logs + "\n")
+                print("Error/failure logs collected.")
+            else:
+                f.write("No error or failure logs found in /var/log/syslog.\n")
+                print("No error or failure logs found.")
+        except Exception as e:
+            error_msg = f"Could not filter error/failure logs: {e}\n"
+            f.write(error_msg)
+            print(error_msg.strip())
+
         f.write("\n>>> Searching for installed apps:\n")
         print("Searching for installed apps...")
         try:
