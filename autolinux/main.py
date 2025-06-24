@@ -1,10 +1,10 @@
 import argparse
-from maintenance import maintenance_tasks
-from deploy import deploy, test_deploy, check_deploy, revert_deploy
-from patch import patch, test_patch, check_patch, revert_patch
-from fix import fix, test_fix, check_fix, revert_fix
-from troubleshoot import troubleshoot
-from backup import config_backup
+from autolinux.maintenance import maintenance_tasks
+from autolinux.deploy import deploy, test_deploy, check_deploy, revert_deploy
+from autolinux.patch import patch, test_patch, check_patch, revert_patch
+from autolinux.fix import fix, test_fix, check_fix, revert_fix
+from autolinux.troubleshoot import troubleshoot
+from autolinux.backup import config_backup
 
 def main():
     parser = argparse.ArgumentParser(description="Autolinux Automation Tool")
