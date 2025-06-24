@@ -1,4 +1,5 @@
 def print_bash_completion():
+    print("DEBUG: Function called")
     commands = [
         "deploy", "test-deploy", "check-deploy", "revert-deploy",
         "patch", "test-patch", "check-patch", "revert-patch",
