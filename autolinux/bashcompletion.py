@@ -12,3 +12,4 @@ _autolinux_completions()
 }}
 complete -F _autolinux_completions autolinux
 """
+    print(completion_script)
