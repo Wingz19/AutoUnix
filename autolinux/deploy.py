@@ -1,5 +1,5 @@
 # filepath: autolinux/deploy.py
-from backup import config_backup
+from autolinux.backup import config_backup
 import os
 import json
 

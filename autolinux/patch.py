@@ -1,5 +1,5 @@
 # filepath: autolinux/patch.py
-from backup import config_backup
+from autolinux.backup import config_backup
 import subprocess
 
 def patch():

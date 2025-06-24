@@ -1,5 +1,5 @@
 # filepath: autolinux/fix.py
-from backup import config_backup
+from autolinux.backup import config_backup
 
 def fix():
     config_backup()
